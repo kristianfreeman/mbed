@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "mbed-scraper",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "main": "index.js",
+  "scripts": {
+    "build": "wrangler build",
+    "dev": "wrangler dev",
+    "publish": "wrangler publish"
+  },
+  "author": "@signalnerve",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}

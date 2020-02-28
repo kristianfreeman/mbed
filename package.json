@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "mbed",
+  "version": "0.1.0",
+  "description": "website embed data via an API",
+  "author": "@signalnerve",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

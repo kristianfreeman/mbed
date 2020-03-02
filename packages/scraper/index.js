@@ -3,7 +3,7 @@ addEventListener('fetch', event => {
 })
 
 const helpText =
-  'pass ?url param to get page data back\n\nGET https://scraper.signalnerve.workers.dev/?url=https://egghead.io\n\n{\n  "title": "egghead.io",\n  "description": "Concise screencast video tutorials that cover the best tools, libraries, and frameworks that modern javascript web developers can use to code more effectively and stay current.",\n  "image": "https://res.cloudinary.com/dg3gyk0gu/image/upload/v1566948117/transcript-images/Eggo_Notext.png",\n  "url": "https://www.egghead.io"\n}\n\n-> wip, find source @ https://github.com/signalnerve/mbed'
+  'pass ?url param to get page data back\n\nGET https://mbed.signalnerve.workers.dev/?url=https://egghead.io\n\n{\n  "title": "egghead.io",\n  "description": "Concise screencast video tutorials that cover the best tools, libraries, and frameworks that modern javascript web developers can use to code more effectively and stay current.",\n  "image": "https://res.cloudinary.com/dg3gyk0gu/image/upload/v1566948117/transcript-images/Eggo_Notext.png",\n  "url": "https://www.egghead.io"\n}\n\n-> wip, find source @ https://github.com/signalnerve/mbed'
 
 const WHITELIST = [
   'description',

@@ -1,3 +1,10 @@
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event))
+})
+
+const helpText =
+  'pass ?url param to get page data back\n\nGET https://scraper.signalnerve.workers.dev/?url=https://egghead.io\n\n{\n  "title": "egghead.io",\n  "description": "Concise screencast video tutorials that cover the best tools, libraries, and frameworks that modern javascript web developers can use to code more effectively and stay current.",\n  "image": "https://res.cloudinary.com/dg3gyk0gu/image/upload/v1566948117/transcript-images/Eggo_Notext.png",\n  "url": "https://www.egghead.io"\n}\n\n-> wip, find source @ https://github.com/signalnerve/mbed'
+
 const WHITELIST = [
   'description',
   'og:description',
@@ -10,7 +17,8 @@ const WHITELIST = [
 
 const elementToMetaTag = element => {
   const tag = {}
-  ;['name', 'property', 'content'].forEach(key => {
+  const keys = ['name', 'property', 'content']
+  keys.forEach(key => {
     const attr = element.getAttribute(key)
     if (attr) tag[key] = attr
   })
@@ -73,16 +81,10 @@ async function handleRequest({ request }) {
         { headers: { 'Content-type': 'application/json' } },
       )
     } else {
-      return new Response(
-        'pass ?url param to get page data back\n\nGET https://scraper.signalnerve.workers.dev/?url=https://egghead.io\n\n{\n  "title": "egghead.io",\n  "description": "Concise screencast video tutorials that cover the best tools, libraries, and frameworks that modern javascript web developers can use to code more effectively and stay current.",\n  "image": "https://res.cloudinary.com/dg3gyk0gu/image/upload/v1566948117/transcript-images/Eggo_Notext.png",\n  "url": "https://www.egghead.io"\n}\n\n-> wip, find source @ https://github.com/signalnerve/mbed',
-      )
+      return new Response(helpText)
     }
   } catch (err) {
     console.error(err)
     return new Response(err)
   }
 }
-
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event))
-})

@@ -72,7 +72,7 @@ async function handleRequest({ request }) {
       const matches = await handleAPIRequest(scrapeUrl)
       return new Response(
         JSON.stringify({
-          title: valueForKey('title') || valueForKey('og:title'),
+          title: valueForKey('<title>') || valueForKey('og:title'),
           description:
             valueForKey('description') || valueForKey('og:description'),
           image: valueForKey('og:image'),

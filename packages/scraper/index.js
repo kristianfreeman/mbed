@@ -78,7 +78,12 @@ async function handleRequest({ request }) {
           image: valueForKey('og:image'),
           url: valueForKey('og:url') || scrapeUrl,
         }),
-        { headers: { 'Content-type': 'application/json' } },
+        {
+          headers: {
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+        },
       )
     } else {
       return new Response(helpText)
